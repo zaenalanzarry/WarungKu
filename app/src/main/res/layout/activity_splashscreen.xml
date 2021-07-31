@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greenbg"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:id="@+id/textlogo"
+        android:layout_width="145dp"
+        android:layout_height="162dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo"
+        />
+
+    <me.ibrahimsn.lib.CirclesLoadingView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/textlogo"
+        android:layout_marginTop="20dp"
+        app:circleRadius="10dp"
+        app:circleMargin="8dp"
+        app:animDistance="10dp"
+        app:animDuration="500"
+        app:animDelay="150"
+        app:animInterpolator="accelerateDecelerate"
+        />
+
+</RelativeLayout>

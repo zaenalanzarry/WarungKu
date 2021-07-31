@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dimen8"
+    tools:context=".fragment.Profile">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile"
+            android:textSize="@dimen/dimensp30"
+            android:layout_marginTop="@dimen/dimen30"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/txt_namaWarung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_nama_warung"
+            android:textSize="@dimen/dimensp18"
+            android:layout_marginTop="@dimen/dimen20"
+            android:layout_below="@id/txt_profile"
+            />
+
+        <TextView
+            android:id="@+id/txt_noHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nomer_handphone"
+            android:textSize="@dimen/dimensp18"
+            android:layout_marginTop="@dimen/dimen10"
+            android:layout_below="@id/txt_namaWarung"
+            />
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="@dimen/dimensp18"
+            android:layout_marginTop="@dimen/dimen10"
+            android:layout_below="@id/txt_noHP"
+            />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+</FrameLayout>

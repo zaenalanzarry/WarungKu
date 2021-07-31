@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dimen8"
+    tools:context=".loginregist.Login">
+
+    <TextView
+        android:id="@+id/namatoko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/warungku"
+        android:textSize="40sp"
+        android:layout_marginTop="@dimen/dimen80"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/namatoko"
+        android:layout_marginTop="10dp"
+        android:hint="@string/email"
+        android:inputType="text"
+        />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEmail"
+        android:layout_marginTop="10dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_marginTop="15dp"
+        android:text="@string/login"
+        />
+
+    <TextView
+        android:id="@+id/toforgotpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:text="@string/txt_forgot_password"
+        android:layout_marginLeft="@dimen/dimen12"
+        />
+
+    <TextView
+        android:id="@+id/toregister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:layout_toRightOf="@id/toforgotpassword"
+        android:layout_toEndOf="@id/toforgotpassword"
+        android:text="@string/register"
+        android:layout_marginLeft="@dimen/dimen180"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

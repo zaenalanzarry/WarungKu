@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "563787096525",
+    "firebase_url": "https://warungku-2021-default-rtdb.firebaseio.com",
+    "project_id": "warungku-2021",
+    "storage_bucket": "warungku-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563787096525:android:a1021de4fd16c02f026484",
+        "android_client_info": {
+          "package_name": "com.zaenalanzarry.warungku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563787096525-n0diesjjnoekks869hasjlvds86geh0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANXBTGKyWrXupTcFjvVe_waYqX9Z2cRXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563787096525-n0diesjjnoekks869hasjlvds86geh0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

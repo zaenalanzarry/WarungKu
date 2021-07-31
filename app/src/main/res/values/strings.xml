@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">WarungKu</string>
+    <string name="warungku">WarungKu</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="txt_forgot_password">Forgot Password?</string>
+    <string name="register">Register</string>
+    <string name="txt_nama_warung">Nama Warung</string>
+    <string name="nomer_handphone">Nomer Handphone</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="masukkan_email">Masukkan Email</string>
+    <string name="reset_password">reset password</string>
+</resources>

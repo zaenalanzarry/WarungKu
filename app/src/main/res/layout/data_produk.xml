@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/namaBarang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="namaBarang"
+            />
+
+        <TextView
+            android:id="@+id/hargaBeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hargaBeli"
+            android:layout_below="@id/namaBarang"
+            />
+
+        <TextView
+            android:id="@+id/hargaJual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hargaJual"
+            android:layout_below="@id/hargaBeli"
+            />
+
+        <TextView
+            android:id="@+id/stok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stok"
+            android:layout_below="@id/hargaJual"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
