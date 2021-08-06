@@ -2,12 +2,10 @@ package com.zaenalanzarry.warungku.adapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,9 +24,6 @@ import com.zaenalanzarry.warungku.R;
 import com.zaenalanzarry.warungku.crud.TambahData;
 import com.zaenalanzarry.warungku.model.modelApp;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterData extends RecyclerView.Adapter<AdapterData.MyViewHolder> {
