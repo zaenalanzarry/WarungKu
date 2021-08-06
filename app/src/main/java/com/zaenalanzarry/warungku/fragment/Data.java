@@ -3,7 +3,9 @@ package com.zaenalanzarry.warungku.fragment;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.zaenalanzarry.warungku.R;
 import com.zaenalanzarry.warungku.adapter.AdapterData;
+import com.zaenalanzarry.warungku.crud.TambahData;
 import com.zaenalanzarry.warungku.model.modelApp;
 
 
@@ -70,10 +74,12 @@ public class Data extends Fragment {
         }
     }
 
-    RecyclerView recyclerView;
-    DatabaseReference db;
-    AdapterData adapterData;
-    ArrayList<modelApp> list;
+    FloatingActionButton fab_tambah;
+    AdapterData recyclerAdapter;
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    ArrayList<modelApp> listBarang;
+    RecyclerView rv_data;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,26 +87,41 @@ public class Data extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_data, container, false);
 
-        recyclerView = view.findViewById(R.id.data);
-        db = FirebaseDatabase.getInstance().getReference("Data");
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
+        fab_tambah = view.findViewById(R.id.fab_tambah);
+        rv_data = view.findViewById(R.id.rv_data);
 
-        list = new ArrayList<>();
-        adapterData = new AdapterData(getActivity(), list);
-        recyclerView.setAdapter(adapterData);
+        RecyclerView.LayoutManager mLayout = new LinearLayoutManager(getActivity());
+        rv_data.setLayoutManager(mLayout);
+        rv_data.setItemAnimator(new DefaultItemAnimator());
 
-        db.addValueEventListener(new ValueEventListener() {
+        fab_tambah.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+            public void onClick(View v) {
+                TambahData tambahData = new TambahData("","","","","","Tambah");
+                tambahData.show(getActivity().getSupportFragmentManager(), "form");
 
-                    modelApp model = dataSnapshot.getValue(modelApp.class);
-                    list.add(model);
+            }
+        });
+
+        showData();
+
+        return view;
+
+    }
+
+    private void showData(){
+        database.child("Data").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listBarang = new ArrayList<>();
+                for(DataSnapshot item : snapshot.getChildren()){
+                    modelApp tmbh = item.getValue(modelApp.class);
+                    tmbh.setKey(item.getKey());
+                    listBarang.add(tmbh);
                 }
 
-                adapterData.notifyDataSetChanged();
+                recyclerAdapter = new AdapterData(listBarang, getActivity());
+                rv_data.setAdapter(recyclerAdapter);
 
             }
 
@@ -109,7 +130,6 @@ public class Data extends Fragment {
 
             }
         });
-
-        return view;
     }
+
 }

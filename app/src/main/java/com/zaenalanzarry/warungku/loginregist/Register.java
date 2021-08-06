@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,10 +23,11 @@ import com.zaenalanzarry.warungku.R;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView btnregist, backlogin;
+    private TextView btnregist;
     private EditText etnamawarung, etnohp, etemail, etpass;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    private ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +36,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         mAuth = FirebaseAuth.getInstance();
 
-        backlogin = findViewById(R.id.backLogin);
-        backlogin.setOnClickListener(this);
+        back = findViewById(R.id.backtoLogin);
+        back.setOnClickListener(this);
 
         btnregist = findViewById(R.id.btnRegister);
         btnregist.setOnClickListener(this);
@@ -51,7 +53,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.backLogin:
+            case R.id.backtoLogin:
                 startActivity(new Intent(this, Login.class));
                 break;
             case R.id.btnRegister:

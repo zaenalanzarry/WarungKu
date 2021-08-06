@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WarungKuV2">
         <activity android:name=".loginregist.ForgotPassword"></activity>
-        <activity android:name=".fragment.Profile" />
         <activity android:name=".menu.MenuNavigation" />
         <activity android:name=".loginregist.Register" />
         <activity android:name=".loginregist.Login" />

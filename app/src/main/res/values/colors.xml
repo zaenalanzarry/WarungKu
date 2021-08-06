@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="greenbg">#26de81</color>
+    <color name="darkmodeblck">#000000</color>
+    <color name="darkmodeblckmuda">#292929</color>
+    <color name="darkmodeblue">#191970</color>
+    <color name="darkmodebluemuda">#302d64</color>
+
 </resources>

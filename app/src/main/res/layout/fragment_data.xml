@@ -4,24 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="@dimen/dimen8"
     tools:context=".fragment.Data">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvdata"
+        android:id="@+id/rv_data"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:listitem="@layout/data_produk"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btntambah"
+        android:id="@+id/fab_tambah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
         android:layout_margin="@dimen/dimen16"
         android:src="@drawable/ic_tambah"
+        android:backgroundTint="@color/darkmodeblue"
         />
 
 </FrameLayout>

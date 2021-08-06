@@ -1,42 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/card_view_rv"
+    android:layout_margin="@dimen/dimen8"
+    app:cardCornerRadius="@dimen/dimen10"
+    app:cardElevation="@dimen/dimen8"
+    android:backgroundTint="@color/darkmodebluemuda">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/namaBarang"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll_1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="namaBarang"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dimen10"
+            android:paddingEnd="@dimen/dimen10"
+            android:paddingTop="@dimen/dimen10"
+            android:paddingBottom="@dimen/dimen10"
+            android:layout_marginStart="@dimen/dimen10"
+            android:background="@color/darkmodeblckmuda">
+
+            <TextView
+                android:id="@+id/tv_namaBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="namaBarang"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen4"
+                />
+
+            <TextView
+                android:id="@+id/tv_hargaBeli"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hargaBeli"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen4"
+                />
+
+            <TextView
+                android:id="@+id/tv_hargaJual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hargaJual"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen4"
+                />
+
+            <TextView
+                android:id="@+id/tv_stok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="stok"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen4"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_hapus"
+            android:layout_width="@dimen/dimen30"
+            android:layout_height="@dimen/dimen30"
+            android:src="@drawable/ic_hapus"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dimen8"
             />
 
-        <TextView
-            android:id="@+id/hargaBeli"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="hargaBeli"
-            android:layout_below="@id/namaBarang"
-            />
-
-        <TextView
-            android:id="@+id/hargaJual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="hargaJual"
-            android:layout_below="@id/hargaBeli"
-            />
-
-        <TextView
-            android:id="@+id/stok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="stok"
-            android:layout_below="@id/hargaJual"
+        <ImageView
+            android:id="@+id/btn_edit"
+            android:layout_width="@dimen/dimen30"
+            android:layout_height="@dimen/dimen30"
+            android:src="@drawable/ic_edit"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/ll_1"
+            android:layout_margin="@dimen/dimen8"
             />
 
     </RelativeLayout>

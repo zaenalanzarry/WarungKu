@@ -3,14 +3,21 @@
     <item
         android:id="@+id/home"
         android:title="Home"
+        android:icon="@drawable/ic_home"
         />
 
     <item android:id="@+id/data"
-        android:title="Data" />
+        android:title="Data"
+        android:icon="@drawable/ic_data"
+        />
 
     <item android:id="@+id/laporan"
-        android:title="Laporan" />
+        android:title="Laporan"
+        android:icon="@drawable/ic_laporan"
+        />
 
     <item android:id="@+id/profile"
-        android:title="Profile" />
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"
+        />
 </menu>
