@@ -68,18 +68,8 @@
             android:id="@+id/btn_hapus"
             android:layout_width="@dimen/dimen30"
             android:layout_height="@dimen/dimen30"
-            android:src="@drawable/ic_hapus"
+            android:src="@drawable/ic_hapus_v2"
             android:layout_alignParentRight="true"
-            android:layout_margin="@dimen/dimen8"
-            />
-
-        <ImageView
-            android:id="@+id/btn_edit"
-            android:layout_width="@dimen/dimen30"
-            android:layout_height="@dimen/dimen30"
-            android:src="@drawable/ic_edit"
-            android:layout_alignParentRight="true"
-            android:layout_alignBottom="@id/ll_1"
             android:layout_margin="@dimen/dimen8"
             />
 

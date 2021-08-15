@@ -8,21 +8,23 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.FirebaseDatabase;;
 import com.google.firebase.database.ValueEventListener;
 import com.zaenalanzarry.warungku.R;
 import com.zaenalanzarry.warungku.adapter.AdapterData;
 import com.zaenalanzarry.warungku.crud.TambahData;
 import com.zaenalanzarry.warungku.model.modelApp;
-
 
 import java.util.ArrayList;
 
@@ -76,9 +78,9 @@ public class Data extends Fragment {
     FloatingActionButton fab_tambah;
     AdapterData recyclerAdapter;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-    ArrayList<modelApp> listBarang;
+    ArrayList<modelApp> listBarang, myList;
     RecyclerView rv_data;
-
+    EditText searchData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -92,6 +94,8 @@ public class Data extends Fragment {
         RecyclerView.LayoutManager mLayout = new LinearLayoutManager(getActivity());
         rv_data.setLayoutManager(mLayout);
         rv_data.setItemAnimator(new DefaultItemAnimator());
+
+        searchData = view.findViewById(R.id.searchData);
 
         fab_tambah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,26 +113,60 @@ public class Data extends Fragment {
     }
 
     private void showData(){
-        database.child("Data").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listBarang = new ArrayList<>();
-                for(DataSnapshot item : snapshot.getChildren()){
-                    modelApp tmbh = item.getValue(modelApp.class);
-                    tmbh.setKey(item.getKey());
-                    listBarang.add(tmbh);
+       if(database != null) {
+            database.child("Data").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    listBarang = new ArrayList<>();
+                    for (DataSnapshot item : snapshot.getChildren()) {
+                        modelApp tmbh = item.getValue(modelApp.class);
+                        tmbh.setKey((item.getKey()));
+                        listBarang.add(tmbh);
+                    }
+
+                    recyclerAdapter = new AdapterData(listBarang, getActivity());
+                    rv_data.setAdapter(recyclerAdapter);
+
                 }
 
-                recyclerAdapter = new AdapterData(listBarang, getActivity());
-                rv_data.setAdapter(recyclerAdapter);
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
+                }
+            });
+       }
+        if(searchData != null){
+            searchData.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                }
 
-            }
-        });
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                    search(s.toString());
+                }
+            });
+
+        }
     }
+
+    private void search(String str) {
+        myList = new ArrayList<>();
+        for(modelApp object : listBarang){
+            if(object.getNamaBarang().toLowerCase().contains(str.toLowerCase())){
+                myList.add(object);
+            }
+        }
+        recyclerAdapter = new AdapterData(myList, getActivity());
+        rv_data.setAdapter(recyclerAdapter);
+    }
+
 
 }

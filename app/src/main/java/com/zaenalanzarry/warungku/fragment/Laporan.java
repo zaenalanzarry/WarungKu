@@ -8,7 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.zaenalanzarry.warungku.R;
+import com.zaenalanzarry.warungku.model.modelChart;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +69,40 @@ public class Laporan extends Fragment {
         }
     }
 
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference("Data");
+    AnyChartView anyChartView;
+    ArrayList<modelChart> listaja;
+    String[] barang = {"aa", "bb"};
+    int[] stok = {1,2};
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_laporan, container, false);
+        final View view =  inflater.inflate(R.layout.fragment_laporan, container, false);
+
+        anyChartView = view.findViewById(R.id.piechart);
+
+        setUpChartView();
+
+        return view;
     }
+
+   private void setUpChartView() {
+
+       Pie pie = AnyChart.pie();
+       pie.background("black");
+
+       List<DataEntry> dataEntries = new ArrayList<>();
+
+       for (int i=0; i<barang.length; i++){
+           dataEntries.add(new ValueDataEntry(barang[i], stok[i]));
+       }
+
+       pie.data(dataEntries);
+       pie.title("Gaji");
+       anyChartView.setChart(pie);
+
+    }
+
 }

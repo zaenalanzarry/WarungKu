@@ -30,6 +30,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
 
+    private Boolean isPasswordVisible;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         forgotpass = findViewById(R.id.toforgotpassword);
         forgotpass.setOnClickListener(this);
+
+
     }
 
 

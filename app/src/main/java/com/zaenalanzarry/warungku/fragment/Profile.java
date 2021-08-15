@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.zaenalanzarry.warungku.R;
 import com.zaenalanzarry.warungku.loginregist.Login;
 import com.zaenalanzarry.warungku.loginregist.User;
+import com.zaenalanzarry.warungku.profile.DialogAbout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,7 +77,7 @@ public class Profile extends Fragment {
 
     private String userID;
 
-    private Button logout;
+    private Button logout, about;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -85,6 +86,15 @@ public class Profile extends Fragment {
         final View view =  inflater.inflate(R.layout.fragment_profile, container, false);
 
         logout = view.findViewById(R.id.btnLogout);
+        about = view.findViewById(R.id.btnabout);
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogAbout dialogProfile = new DialogAbout();
+                dialogProfile.show(getActivity().getSupportFragmentManager(), "form");
+            }
+        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.zaenalanzarry.warungku.R;
+import com.zaenalanzarry.warungku.loginregist.User;
 import com.zaenalanzarry.warungku.model.modelApp;
 
 public class TambahData extends DialogFragment {
@@ -72,6 +73,8 @@ public class TambahData extends DialogFragment {
                     input((EditText) et_stok, "Stok");
                 }  else {
                     if(pilih.equals("Tambah")){
+                        User user = new User();
+
                         database.child("Data").push().setValue(new modelApp(namaBarang, hargaBeli, hargaJual, stok))
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override

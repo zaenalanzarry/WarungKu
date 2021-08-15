@@ -85,7 +85,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.MyViewHolder> 
             }
         });
 
-        holder.btn_edit.setOnClickListener(new View.OnClickListener() {
+        holder.card_view_rv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager manager = ((AppCompatActivity)activity).getSupportFragmentManager();
@@ -107,13 +107,12 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.MyViewHolder> 
         return list.size();
     }
 
-
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_namaBarang, tv_hargaBeli, tv_hargaJual, tv_stok;
 
         CardView card_view_rv;
 
-        ImageView btn_edit, btn_hapus;
+        ImageView btn_hapus;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -123,10 +122,8 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.MyViewHolder> 
             tv_hargaJual = itemView.findViewById(R.id.tv_hargaJual);
             tv_stok = itemView.findViewById(R.id.tv_stok);
 
-            card_view_rv = itemView.findViewById(R.id.card_view_rv);
-
             btn_hapus = itemView.findViewById(R.id.btn_hapus);
-            btn_edit = itemView.findViewById(R.id.btn_edit);
+            card_view_rv = itemView.findViewById(R.id.card_view_rv);
         }
     }
 }

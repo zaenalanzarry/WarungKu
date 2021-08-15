@@ -11,87 +11,123 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/img_acc"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen150"
+            android:layout_marginTop="@dimen/dimen18"
+            android:src="@drawable/ic_profile_acc"
+            />
+
         <TextView
             android:id="@+id/txt_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/profile"
             android:textSize="@dimen/dimensp30"
-            android:layout_marginTop="@dimen/dimen30"
+            android:layout_marginTop="@dimen/dimen20"
             android:layout_centerHorizontal="true"
             android:textColor="@color/white"
+            android:layout_below="@id/img_acc"
             />
 
-        <TextView
-            android:id="@+id/txt_namaWarungaja"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nama Warung   :  "
-            android:textSize="@dimen/dimensp18"
-            android:layout_marginTop="@dimen/dimen20"
-            android:layout_below="@id/txt_profile"
-            android:textColor="@color/white"
-            />
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen16"
+            android:layout_below="@id/txt_profile">
 
-        <TextView
-            android:id="@+id/txt_namaWarung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="@dimen/dimensp18"
-            android:layout_marginTop="@dimen/dimen20"
-            android:layout_below="@id/txt_profile"
-            android:layout_toRightOf="@id/txt_namaWarungaja"
-            android:layout_toEndOf="@id/txt_namaWarungaja"
-            android:textColor="@color/white"
-            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2"
+                >
 
-        <TextView
-            android:id="@+id/txt_noHPaja"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nomer HP          :  "
-            android:textSize="@dimen/dimensp18"
-            android:layout_marginTop="@dimen/dimen10"
-            android:layout_below="@id/txt_namaWarung"
-            android:textColor="@color/white"
-            />
+                <TextView
+                    android:id="@+id/txt_namaWarungaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Warung       :"
+                    android:gravity="right"
+                    android:textSize="@dimen/dimen14"
+                    android:textColor="@color/white"
+                    />
 
-        <TextView
-            android:id="@+id/txt_noHP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="@dimen/dimensp18"
-            android:layout_marginTop="@dimen/dimen10"
-            android:layout_below="@id/txt_namaWarung"
-            android:layout_toRightOf="@id/txt_noHPaja"
-            android:layout_toEndOf="@id/txt_noHPaja"
-            android:textColor="@color/white"
-            />
+                <TextView
+                    android:id="@+id/txt_noHPaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nomer HP               :"
+                    android:gravity="right"
+                    android:textSize="@dimen/dimen14"
+                    android:layout_marginTop="@dimen/dimen10"
+                    android:layout_below="@id/txt_namaWarung"
+                    android:textColor="@color/white"
+                    />
 
-        <TextView
-            android:id="@+id/txt_emailaja"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email                  :  "
-            android:textSize="@dimen/dimensp18"
-            android:layout_marginTop="@dimen/dimen10"
-            android:layout_below="@id/txt_noHP"
-            android:textColor="@color/white"
-            />
+                <TextView
+                    android:id="@+id/txt_emailaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email                        :"
+                    android:gravity="right"
+                    android:textSize="@dimen/dimen14"
+                    android:layout_marginTop="@dimen/dimen10"
+                    android:layout_below="@id/txt_noHP"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/txt_email"
-            android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dimen8"
+                >
+
+                <TextView
+                    android:id="@+id/txt_namaWarung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/dimen14"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_noHP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/dimen14"
+                    android:layout_marginTop="@dimen/dimen10"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/dimen14"
+                    android:layout_marginTop="@dimen/dimen10"
+                    android:textColor="@color/white"
+                    />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        <Button
+            android:id="@+id/btnabout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="@dimen/dimensp18"
-            android:layout_marginTop="@dimen/dimen10"
-            android:layout_below="@id/txt_noHP"
-            android:layout_toRightOf="@id/txt_emailaja"
-            android:layout_toEndOf="@id/txt_emailaja"
-            android:textColor="@color/white"
+            android:text="About Us"
+            android:layout_above="@id/btnLogout"
+            android:backgroundTint="@color/darkmodeblue"
             />
 
         <Button

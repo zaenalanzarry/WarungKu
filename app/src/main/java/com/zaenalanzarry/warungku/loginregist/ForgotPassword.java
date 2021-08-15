@@ -3,11 +3,13 @@ package com.zaenalanzarry.warungku.loginregist;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -16,11 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.zaenalanzarry.warungku.R;
 
-public class ForgotPassword extends AppCompatActivity {
+public class ForgotPassword extends AppCompatActivity implements View.OnClickListener{
 
     private EditText etemail;
     private Button btnresetPass;
     private ProgressBar progressBar;
+    private ImageView back;
 
     FirebaseAuth auth;
 
@@ -29,18 +32,29 @@ public class ForgotPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-        etemail = findViewById(R.id.etEmail);
+        back = findViewById(R.id.backtoLogin);
+        back.setOnClickListener(this);
+
         btnresetPass = findViewById(R.id.btnresetpass);
+        btnresetPass.setOnClickListener(this);
+
+        etemail = findViewById(R.id.etEmail);
         progressBar = findViewById(R.id.progressbar);
 
         auth = FirebaseAuth.getInstance();
 
-        btnresetPass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.backtoLogin:
+                startActivity(new Intent(this, Login.class));
+                break;
+            case R.id.btnresetpass:
                 resetpass();
-            }
-        });
+                break;
+        }
     }
 
     private void resetpass() {
@@ -72,4 +86,5 @@ public class ForgotPassword extends AppCompatActivity {
             }
         });
     }
+
 }

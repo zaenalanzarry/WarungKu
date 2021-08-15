@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/darkmodeblckmuda">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/darkmodebluemuda">
+
+        <TextView
+            android:id="@+id/txt_forminput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="WarungKu"
+            android:textSize="@dimen/dimensp28"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen16">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/dimen100"
+                android:layout_height="@dimen/dimen100"
+                android:src="@drawable/logo"
+                />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WarungKu"
+                android:textSize="@dimen/dimen14"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@id/logo"
+                android:layout_marginLeft="@dimen/dimen16"
+
+                />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="zaenal7a@gmail.com"
+                android:textSize="@dimen/dimen14"
+                android:layout_toRightOf="@id/logo"
+                android:layout_below="@id/nama"
+                android:layout_marginTop="@dimen/dimen10"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/dimen16"
+                />
+
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="v1.0"
+                android:textSize="@dimen/dimen12"
+                android:layout_toRightOf="@+id/logo"
+                android:layout_below="@id/email"
+                android:layout_marginTop="@dimen/dimen10"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/dimen16"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

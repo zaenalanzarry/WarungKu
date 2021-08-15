@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/dimen8"
     tools:context=".loginregist.Login"
-    android:background="@color/darkmodeblck">
+    android:background="@color/black">
 
     <TextView
         android:id="@+id/namatoko"
@@ -29,6 +29,8 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/ic_email"
+        android:paddingStart="@dimen/dimen8"
         />
 
     <EditText
@@ -42,6 +44,9 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/ic_pass"
+        android:paddingStart="@dimen/dimen8"
+        android:longClickable="false"
         />
 
     <Button
