@@ -1,14 +1,20 @@
 package com.zaenalanzarry.warungku.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.zaenalanzarry.warungku.R;
+import com.zaenalanzarry.warungku.menu.MenuNavigation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +63,40 @@ public class Home extends Fragment {
         }
     }
 
+    CardView cardView_data, cardView_laporan, cardView_profile;
+    TextView tv_data;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        final View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        cardView_data = view.findViewById(R.id.card_view_data);
+        cardView_laporan = view.findViewById(R.id.card_view_laporan);
+        cardView_profile = view.findViewById(R.id.card_view_profile);
+
+        cardView_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction().replace(R.id.page_container, new Data()).commit();
+            }
+        });
+
+        cardView_laporan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction().replace(R.id.page_container, new Laporan()).commit();
+            }
+        });
+
+        cardView_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction().replace(R.id.page_container, new Profile()).commit();
+            }
+        });
+
+        return view;
     }
 }

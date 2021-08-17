@@ -14,4 +14,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="masukkan_email">Masukkan Email</string>
     <string name="reset_password">reset password</string>
+    <string name="desc_warungku">WarungKu adalah aplikasi pengecekan stok barang yang terdapat di warung dan akan ditampilkan secara grafik</string>
 </resources>

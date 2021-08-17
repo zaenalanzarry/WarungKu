@@ -6,16 +6,30 @@
     tools:context=".fragment.Laporan">
 
 
-    <TextView
-        android:id="@+id/tttt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="hshs"
-        />
-
-    <com.anychart.AnyChartView
-        android:id="@+id/piechart"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         />
+        >
+
+        <TextView
+            android:id="@+id/titleaja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stok Barang"
+            android:textSize="@dimen/dimensp24"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dimen20"
+            />
+
+        <com.anychart.AnyChartView
+            android:layout_below="@id/titleaja"
+            android:id="@+id/piechart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </RelativeLayout>
+
 </FrameLayout>

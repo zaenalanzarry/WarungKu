@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.zaenalanzarry.warungku.R;
@@ -30,7 +31,9 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.MyViewHolder> 
 
     private List<modelApp> list;
     private Activity activity;
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    String userId = fAuth.getCurrentUser().getUid();
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference("Users").child(userId);
 
     public AdapterData(List<modelApp> list, Activity activity) {
         this.list = list;

@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -77,7 +78,9 @@ public class Data extends Fragment {
 
     FloatingActionButton fab_tambah;
     AdapterData recyclerAdapter;
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    String userId = fAuth.getCurrentUser().getUid();
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference("Users").child(userId);
     ArrayList<modelApp> listBarang, myList;
     RecyclerView rv_data;
     EditText searchData;

@@ -72,8 +72,8 @@ public class Laporan extends Fragment {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference("Data");
     AnyChartView anyChartView;
     ArrayList<modelChart> listaja;
-    String[] barang = {"aa", "bb"};
-    int[] stok = {1,2};
+    String[] barang = {"tahu", "minyak","tempe", "gula merah", "gula putih", "pasta gigi pepsodent", "sikat gigi pepsodent"};
+    int[] stok = {10,20,10,20,20,20,30};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,7 +100,6 @@ public class Laporan extends Fragment {
        }
 
        pie.data(dataEntries);
-       pie.title("Gaji");
        anyChartView.setChart(pie);
 
     }

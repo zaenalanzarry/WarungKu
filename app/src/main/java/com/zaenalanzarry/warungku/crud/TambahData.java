@@ -16,6 +16,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.zaenalanzarry.warungku.R;
@@ -24,8 +25,11 @@ import com.zaenalanzarry.warungku.model.modelApp;
 
 public class TambahData extends DialogFragment {
 
+    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    String userId = fAuth.getCurrentUser().getUid();
+
     String namaBarang, hargaBeli, hargaJual, stok, key, pilih;
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference("Users").child(userId);
 
     public TambahData(String namaBarang, String hargaBeli, String hargaJual, String stok, String key, String pilih) {
         this.namaBarang = namaBarang;
@@ -72,8 +76,10 @@ public class TambahData extends DialogFragment {
                 } else if(TextUtils.isEmpty(stok)){
                     input((EditText) et_stok, "Stok");
                 }  else {
+
+                    User user = new User();
+
                     if(pilih.equals("Tambah")){
-                        User user = new User();
 
                         database.child("Data").push().setValue(new modelApp(namaBarang, hargaBeli, hargaJual, stok))
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
